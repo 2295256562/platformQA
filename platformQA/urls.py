@@ -22,6 +22,6 @@ from apps.AuthService.views import LoginViewSet
 urlpatterns = [
     path('admin/', admin.site.urls),
     url('^api/v1/login', LoginViewSet.as_view({'post': 'login'})),
-    # url('^api/v1/register', Register.as_view({'post': 'register'})),
+    url('^api/v1/register', LoginViewSet.as_view({'post': 'register'})),
 
 ]

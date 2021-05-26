@@ -1,6 +1,7 @@
 from django.db import models
+
+from apps.AuthService.models import User
 from apps.httpAuto.models.base import BaseModel
-from apps.httpAuto.models.user import User
 
 
 class Api(BaseModel):

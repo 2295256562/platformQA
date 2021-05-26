@@ -5,6 +5,7 @@ from apps.AuthService.models import User
 
 
 class LoginSerializer(serializers.ModelSerializer):
+    username = serializers.CharField()
     class Meta:
         model = User
         fields = ('username', 'password')
@@ -27,14 +28,13 @@ class LoginSerializer(serializers.ModelSerializer):
         raise serializers.ValidationError({'data': '数据有误'})
 
 
-# class RegisterSerializer(serializers.ModelSerializer):
-#     def create(self, validated_data):
-#         user = super(RegisterSerializer, self).create(validated_data=validated_data)
-#         print(user)
-#         user.set_password(validated_data["password"])
-#         user.save()
-#         return user
-#
-#     class Meta:
-#         model = User
-#         fields = ('username', 'password', "roles",)
+class RegisterSerializer(serializers.ModelSerializer):
+    def create(self, validated_data):
+        user = super(RegisterSerializer, self).create(validated_data=validated_data)
+        user.set_password(validated_data["password"])
+        user.save()
+        return user
+
+    class Meta:
+        model = User
+        fields = ('username', 'password', "roles",)

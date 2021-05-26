@@ -81,8 +81,8 @@ REST_FRAMEWORK = {
     ],
     # 接口权限设置：仅支持登录用户访问
     'DEFAULT_PERMISSION_CLASSES': [
-        # 'rest_framework.permissions.AllowAny',
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.AllowAny',
+        # 'rest_framework.permissions.IsAuthenticated',
     ],
     # 全局表查询过滤器
     'DEFAULT_FILTER_BACKENDS': [
