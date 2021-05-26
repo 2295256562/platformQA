@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'django_filters',
-    'apps.httpAuto'
+    'apps.httpAuto',
+    'apps.AuthService'
 
 ]
 
@@ -107,7 +108,7 @@ REST_FRAMEWORK = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': "Platform",
+        'NAME': "platform",
         "HOST": "113.31.147.158",
         "PORT": "3306",
         "USER": "peishan",
@@ -154,4 +155,5 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 
-AUTH_USER_MODEL = 'httpAuto.User'
+# 用户认证MODEL
+AUTH_USER_MODEL = 'AuthService.User'

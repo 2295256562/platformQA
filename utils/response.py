@@ -37,10 +37,19 @@ def server_error_response(err=None):
 
 
 def parameter_error_response(err=None, kwargs: dict = None):
-    response_data = {'retCode': 40000,
+    response_data = {'retCode': 400,
                      'retMsg': u"参数错误 | Fail"}
     if err is not None:
         response_data['err'] = err
     if kwargs:
         response_data.update(kwargs)
     return Response(response_data, status=status.HTTP_200_OK)
+
+
+def error_response(kwargs: dict = None, msg=""):
+    response_data = {'code': 500,
+                     'msg': msg}
+    if kwargs:
+        response_data.update(kwargs)
+    return Response(response_data, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
