@@ -17,11 +17,11 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
 
-from apps.AuthService.views import LoginViewSet, Register
+from apps.AuthService.views import LoginViewSet
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url('^api/v1/login', LoginViewSet.as_view({'post': 'login'})),
-    url('^api/v1/register', Register.as_view({'post': 'register'})),
+    # url('^api/v1/register', Register.as_view({'post': 'register'})),
 
 ]

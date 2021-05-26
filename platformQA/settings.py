@@ -95,7 +95,7 @@ REST_FRAMEWORK = {
     'DATETIME_FORMAT': "%Y-%m-%d %H:%M:%S",
     'DATETIME_INPUT_FORMATS': "%Y-%m-%d %H:%M:%S",
     # 全局异常
-    'EXCEPTION_HANDLER': 'utils.exceptions.custom_exception_handler',
+    # 'EXCEPTION_HANDLER': 'utils.exceptions.custom_exception_handler',
     # 修改默认返回JSON的renderer的类
     'DEFAULT_RENDERER_CLASSES': (
         'utils.rendererresponse.customrenderer',
